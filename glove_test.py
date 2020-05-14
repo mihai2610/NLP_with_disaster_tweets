@@ -5,7 +5,7 @@ import string
 import os
 import datetime
 import tensorflow as tf
-from tensorflow.keras import layers, regularizers, Sequential
+from tensorflow.keras import layers, Sequential
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing import sequence
 from sklearn.model_selection import train_test_split
@@ -65,7 +65,6 @@ def build_model_CNN_EmbMatrix(max_features=10000,
 							  kernel_size2=4,
 							  filters1=128,
 							  filters2=64,
-							  pool_size=2,
 							  max_len=300,
 							  embedded_matrix=None):
 	print("creating model ...")
@@ -173,14 +172,7 @@ def main():
 	train_data_cols = ["id", "keyword", "location", "text"]
 	train_label = "target"
 	train_cols = [train_label] + train_data_cols
-	test_file_path = "./data/test.csv"
-	test_cols = train_data_cols
 	train_df = read_data(train_file_path, cols=train_cols)
-	test_df = read_data(test_file_path, test_cols)
-	test_sentences = [data_clean(w) for w in test_df['text'].values]
-
-	train_sentences = [data_clean(w) for w in train_df['text'].values]
-	train_y = train_df[train_label].values
 
 	classifier_glove(train_df)
 
