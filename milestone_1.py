@@ -54,11 +54,11 @@ def data_preprocessing(train_data: pd.DataFrame, test_data: pd.DataFrame, label_
 
 
 def main():
-	train_file_path = "../data/train.csv"
+	train_file_path = "./data/train.csv"
 	train_data_cols = ["id", "keyword", "location", "text"]
 	train_label = "target"
 	train_cols = [train_label] + train_data_cols
-	test_file_path = "../data/test.csv"
+	test_file_path = "./data/test.csv"
 	test_cols = train_data_cols
 
 	train_df = read_data(train_file_path, train_cols)
@@ -80,7 +80,6 @@ def main():
 	print("accuracy", accuracy)
 
 	pred = classifier.predict(tfidf_test)
-
 
 	with open('output.csv', 'w') as file:
 		_str = ','.join(['id', 'target'])
