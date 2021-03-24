@@ -37,7 +37,7 @@ hmmlearn==0.2.3
 httplib2==0.17.3
 idna==2.9
 itsdangerous==1.1.0
-Jinja2==2.10.3
+Jinja2==2.11.3
 jmespath==0.9.5
 joblib==0.14.1
 Js2Py==0.70
