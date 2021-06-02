@@ -104,7 +104,7 @@ tqdm==4.45.0
 transformers==2.1.1
 tzlocal==2.0.0
 uritemplate==3.0.1
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==0.16.0
 win-inet-pton==1.1.0
 wincertstore==0.2
